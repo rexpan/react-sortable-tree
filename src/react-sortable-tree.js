@@ -938,15 +938,12 @@ ReactSortableTree.defaultProps = {
 
 polyfill(ReactSortableTree);
 
-const SortableTreeWithoutDndContext = props => (
-  <DndContext.Consumer>
-    {({ dragDropManager }) =>
-      dragDropManager === undefined ? null : (
-        <ReactSortableTree {...props} dragDropManager={dragDropManager} />
-      )
-    }
-  </DndContext.Consumer>
-);
+const SortableTreeWithoutDndContext = props => {
+  const { dragDropManager } = useContext(DndContext);
+  return (
+    <ReactSortableTree {...props} dragDropManager={dragDropManager} />
+  );
+};
 
 const SortableTree = props => (
   <DndProvider backend={HTML5Backend}>
