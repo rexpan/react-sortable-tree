@@ -8,7 +8,7 @@ import withScrolling, {
   createHorizontalStrength,
 } from 'frontend-collective-react-dnd-scrollzone';
 import { DndProvider, DndContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import { polyfill } from 'react-lifecycles-compat';
 import 'react-virtualized/styles.css';
 import TreeNode from './tree-node';
